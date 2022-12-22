@@ -20,7 +20,7 @@ async function getBlob(accountName, containerName, blobName) {
 
     // Set the SAS token to allow you to access the blob.
     // Replace {sasToken} with a valid SAS token for the blob.
-    const sasToken = '?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupiyx&se=2022-12-21T20:50:38Z&st=2022-12-21T12:50:38Z&spr=https&sig=jNvSZLIzpY%2BnxbkgfUVor%2Fqq5q5VfaPzOcPdT6mEyAw%3D';
+    const sasToken = '?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupiyx&se=2023-12-22T16:13:55Z&st=2022-12-22T08:13:55Z&spr=https&sig=lnp4STavriXDYj15WvDdwkmOoGxedbS%2FkwAdl2sVy5g%3D';
 
     // Send the GET request to the Azure Storage API to retrieve the blob
     const response = await fetch(storageUrl + sasToken);
