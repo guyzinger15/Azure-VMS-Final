@@ -44,10 +44,27 @@ videoUploadInput.addEventListener('change', function (event) {
     // Load the video file into the player
     player.src = URL.createObjectURL(videoFile);
 
+    // Reset all the visualizations with try/catch and reset the JSON data
+    try {
+        transcriptPlaceholder.innerHTML = "";
+        famousPeoplePlaceholder.innerHTML = "";
+        labelsPlaceholder.innerHTML = "";
+
+        jsonFile = {};
+        jsonData = {};
+        listOfTranscriptWithTimestamps = [];
+        listOfLabelsWithTimestamps = [];
+        listOfLabels = [];
+    } catch (error) {
+        console.log(error);
+    }
+
     // Automatically play the video when it is loaded
     player.onloadedmetadata = () => {
         player.play();
     };
+
+
 
     // Call function(videoName) to get the JSON file from the video file
     getBlob('videoindexerstaccoun', 'insights-json', videoFile.name + '_insights.json')
